@@ -84,8 +84,8 @@ export default function BlogPage({params}) {
     "headline": blog.title,
     "description": blog.description,
     "image": imageList,
-    "datePublished": new Date(blog.publishedAt).toISOString(),
-    "dateModified": new Date(blog.updatedAt || blog.publishedAt).toISOString(),
+    "datePublished":blog.publishedAt && new Date(blog.publishedAt).toISOString(),
+    "dateModified": blog.updatedAt && new Date(blog.updatedAt || blog.publishedAt).toISOString(),
     "author": [{
         "@type": "Person",
         "name": blog?.author ? [blog.author] : siteMetadata.author,
