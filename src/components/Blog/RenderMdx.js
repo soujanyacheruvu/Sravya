@@ -34,7 +34,9 @@ const RenderMdx = ({blog}) => {
 
 
     '> 
+    {MDXContent && (
         <MDXContent components={mdxComponents}/>
+    )}
     </div>
   )
 }
